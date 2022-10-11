@@ -1,0 +1,72 @@
+<template>
+<div class="slds-box slds-box slds-theme_default">
+    <lightning-layout multiple-rows="true" class="slds-grid">
+      <template if:true={showLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium" class="spinnerClass"></lightning-spinner>
+    </template>
+      <template if:true={areDetailsVisible}>
+        <template for:each={relatedCampaignsToOffer} for:item="campaigns">
+          <lightning-layout-item size="4" key={campaigns.Id}>
+               <div class="slds-col_bump-right">
+                   <span class="slds-text-title_bold">{campaigns.county}</span>
+               </div>
+               <div class="slds-grid slds-gutters">
+                   <div class="slds-col slds-size_2-of-3">
+                     <span>
+                       No. of Accepted Offers:
+                     </span>
+                   </div>
+                   <div class="slds-col slds-size_3-of-3">
+                     <span>
+                       {campaigns.noOfAcceptedOffers}
+                     </span>
+                   </div>
+               </div>
+               <div class="slds-grid slds-gutters">
+                   <div class="slds-col slds-size_2-of-3">
+                     <span>
+                       Campaign Total Cost:
+                     </span>
+                   </div>
+                   <div class="slds-col slds-size_3-of-3">
+                     <span>
+                       ${campaigns.totalCost}
+                     </span>
+                   </div>
+               </div>
+               <div class="slds-grid slds-gutters">
+                   <div class="slds-col slds-size_2-of-3">
+                     <span>
+                       Sum Total Cash Margin:
+                     </span>
+                   </div>
+                   <div class="slds-col slds-size_3-of-3">
+                     <span>
+                       ${campaigns.sumCashMargin}
+                     </span>
+                   </div>
+               </div>
+               <div class="slds-grid slds-gutters">
+                   <div class="slds-col slds-size_2-of-3">
+                     <span>
+                       Sum Total Adjusted Gross Profit:
+                     </span>
+                   </div>
+                   <div class="slds-col slds-size_3-of-3">
+                     <span>
+                       ${campaigns.sumAdjustedGrossProfit}
+                     </span>
+                   </div>
+               </div>
+           </lightning-layout-item>
+       </template>
+      </template>
+        <template if:false={areDetailsVisible}>
+          <div class="slds-align_absolute-center slds-text-heading_small" style="height:5rem">
+            No Accepted Offers to Display.
+          </div>
+        </template>
+    
+    </lightning-layout>
+</div>
+</template>

@@ -1,0 +1,11 @@
+/*
+.slds-card{
+    border: solid;
+}*/
+
+.slds-page-header{
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(201,201,201);
+    border-bottom-left-radius: none;
+    border-bottom-right-radius: none;
+}
