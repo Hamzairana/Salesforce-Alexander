@@ -13,7 +13,6 @@ public with sharing class CampaignController {
     }
     @AuraEnabled
     public static List<CampaignWrapper> getCampaigns(Id campaignId) {
-        system.debug('In get Campaigns Function');
         string accepted = '%Accepted%';
         List<Offer__c> offers;
         Set<String> uniqueCounties = new Set<String>();
